@@ -1,0 +1,189 @@
+:root {
+    --blue: #15db78;
+    --bg: #585b5f;
+    --glass: rgba(255,255,255,0.85);
+    --text: #1c1e21;
+    --muted: #65676b;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    overflow-x: hidden;
+}
+
+/* COVER */
+.cover {
+    height: 260px;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    animation: animate 12s infinite ease-in-out alternate-reverse;
+}
+
+
+@keyframes animate {
+    0% {
+        background-image: url(https://www.pixelstalk.net/wp-content/uploads/2016/07/Computer-Science-Background.jpg);
+    }
+
+    25% {
+        background-image: url(https://www.park.edu/wp-content/uploads/2022/09/source-g0d609dba2_1920.jpg);
+    }
+
+    50% {
+        background-image: url(https://www.pixelstalk.net/wp-content/uploads/2016/07/Computer-Science-Desktop-Background.jpg);
+    }
+
+    75% {
+        background-image: url(https://www.pembrokeshire.ac.uk/wp-content/uploads/2018/07/Computer-Science.gif);
+    }
+
+    100% {
+        background-image: url(https://wallpapercave.com/wp/wp3228730.jpg);
+    }
+}
+
+.cover-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,.35), transparent);
+}
+
+/* PROFILE CARD */
+.profile {
+    max-width: 900px;
+    margin: -90px auto 20px;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    border-radius: 18px;
+    box-shadow: 0 20px 50px rgba(0,0,0,.15);
+}
+
+.glass {
+    background: var(--glass);
+    backdrop-filter: blur(10px);
+}
+
+/* AVATAR */
+.avatar-wrapper {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 5px solid white;
+    transition: transform .4s ease;
+}
+
+.avatar-wrapper:hover {
+    transform: scale(1.06);
+}
+
+.avatar-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* INFO */
+.profile-info h1 {
+    font-size: 26px;
+    font-weight: 700;
+}
+
+.job {
+    color: var(--muted);
+    margin: 6px 0 15px;
+}
+
+/* BUTTONS */
+.actions {
+    display: flex;
+    gap: 12px;
+}
+
+.btn {
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.primary {
+    background: var(--blue);
+    color: #fff;
+}
+
+.secondary {
+    background: #e4e6eb;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(0,0,0,.15);
+}
+
+/* DETAILS */
+.details {
+    max-width: 900px;
+    margin: auto;
+    background: #fff;
+    padding: 25px 30px;
+    border-radius: 14px;
+    box-shadow: 0 10px 30px rgba(0,0,0,.08);
+}
+
+.details h2 {
+    margin-bottom: 15px;
+}
+
+.details p {
+    margin: 10px 0;
+    font-size: 15px;
+}
+
+.details a {
+    color: var(--blue);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.back-btn {
+    margin-top: 20px;
+    background: none;
+    border: none;
+    color: var(--blue);
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* ANIMATIONS */
+.fade-in {
+    animation: fadeIn 1s ease forwards;
+}
+
+.slide-up {
+    animation: slideUp .9s ease forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(50px); }
+    to { opacity: 1; transform: translateY(0); }
+}

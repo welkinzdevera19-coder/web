@@ -1,0 +1,122 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* BODY */
+body {
+  height: 100vh;
+  overflow: hidden;
+  font-family: 'Inter', system-ui, sans-serif;
+  background: #050505;
+  color: white;
+}
+
+/* BACKGROUND */
+.bg {
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(circle at 20% 20%, #c532a5, transparent 40%),
+    radial-gradient(circle at 80% 30%, #14d8d1, transparent 40%),
+    radial-gradient(circle at 50% 80%, #1c92d2, transparent 40%);
+  filter: blur(60px);
+  animation: moveBg 18s linear infinite;
+  z-index: -1;
+}
+
+@keyframes moveBg {
+  0% { transform: scale(1) translate(0, 0); }
+  50% { transform: scale(1.1) translate(-40px, -20px); }
+  100% { transform: scale(1) translate(0, 0); }
+}
+
+/* INTRO */
+.intro {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  backdrop-filter: blur(8px);
+}
+
+/* TITLE */
+.title span {
+  display: block;
+  font-size: clamp(3rem, 6vw, 5.2rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  opacity: 0;
+  transform: translateY(60px);
+  animation: textReveal 1.2s cubic-bezier(.19,1,.22,1) forwards;
+}
+
+.title span:nth-child(1) { animation-delay: 0.2s; }
+.title span:nth-child(2) { animation-delay: 0.45s; }
+.title span:nth-child(3) { animation-delay: 0.7s; }
+
+@keyframes textReveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* SUBTITLE */
+.subtitle {
+  margin-top: 18px;
+  font-size: 1.1rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #cfcfcf;
+  opacity: 0;
+  animation: fadeIn 1s ease forwards;
+  animation-delay: 1.4s;
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+/* BUTTON */
+.enter {
+  margin-top: 50px;
+  padding: 14px 46px;
+  background: transparent;
+  border: 1px solid white;
+  color: white;
+  letter-spacing: 3px;
+  font-size: 1rem;
+  cursor: pointer;
+  opacity: 0;
+  animation: fadeIn 1s ease forwards;
+  animation-delay: 1.9s;
+  position: relative;
+  overflow: hidden;
+  font-weight: 600;
+  border-radius: 20px;
+  font-family: 'Times New Roman', Times, serif;
+  text-decoration: none;
+}
+
+.enter::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgb(252, 5, 211);
+  transform: translateX(-100%);
+  transition: transform 0.4s ease;
+  z-index: -1;
+}
+
+.enter:hover {
+  color: black;
+}
+
+.enter:hover::before {
+  transform: translateX(0);
+}
